@@ -10,7 +10,7 @@ public class Driver {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browserName", browser);
 
-        RemoteWebDriver driver = new RemoteWebDriver(DesiredCapabilities.chrome());
+        RemoteWebDriver driver = new RemoteWebDriver(caps);
         driver.manage().window().maximize();
         return driver;
     }
