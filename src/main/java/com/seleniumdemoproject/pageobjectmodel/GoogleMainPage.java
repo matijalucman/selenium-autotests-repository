@@ -33,6 +33,10 @@ public class GoogleMainPage {
     public void searchByInsertedValue(String searchString) throws Exception {
 
         this.searchString = searchString;
+        
+        //Adding Explicit wait to avoid failures
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(searchBox));
         searchBox.clear();
         searchBox.sendKeys(searchString);
         searchBox.submit();
